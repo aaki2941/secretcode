@@ -10,4 +10,35 @@
     button { padding: 0.5rem 1rem; font-size: 1rem; margin-left: 0.5rem; }
   </style>
 </head>
+<body>
+  <h2>Heelo, open it!</h2>
+  <p>Enter the passkey: </p>
+  <input type="password" id="code" />
+  <button onclick="checkCode()">Open</button>
+  
+  <div id="letter">
+    <h3>My Letter to You</h3>
+    <p>
+      Hey [Friend's Name],
+
+      I just wanted to say thank you for being my rock since I got here. It’s meant more than I can ever say in words...
+
+      (continue with your message here)
+    </p>
+  </div>
+
+  <script>
+    const secret = "oursecretcode"; // replace this with your secret code
+
+    function checkCode() {
+      const entered = document.getElementById("code").value;
+      if (entered === secret) {
+        document.getElementById("letter").style.display = "block";
+      } else {
+        alert("Hmm, not quite. Try again?");
+      }
+    }
+  </script>
+</body>
+
 
